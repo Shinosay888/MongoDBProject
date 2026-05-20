@@ -1,13 +1,14 @@
+// in deployment you need to have dotenv, default it is in the node
+import "dotenv/config";
 import express from "express";
 
 const app = express();
-const port = 3000;
+const port = process.env.PORT || 3000; // secret and secured information
 
 app.use(express.json()); // accepring data in json
 
 let teaData = [];
 let nextId = 1;
-
 //business logic
 
 //add a new tea
@@ -43,7 +44,8 @@ app.put("/teas/:id", (req, res) => {
   }
 
   const { name, price } = req.body;
-  tea.name = name; // new name and price
+  tea.name = name; // new
+  //  name and price
   tea.price = price;
 
   res.status(200).send(tea);
