@@ -3,7 +3,7 @@ import "dotenv/config";
 import express from "express";
 
 const app = express();
-const port = process.env.PORT || 3000; // secret and secured information
+const port = process.env.PORT || 3000; // secret and secured information // for digital ocean we must secure data
 
 app.use(express.json()); // accepring data in json
 
